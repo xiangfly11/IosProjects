@@ -15,6 +15,11 @@
 @property (nonatomic,strong) UIImage *newsSmallImage;
 @property (nonatomic,strong) UIImage *newsLargeImage;
 @property (nonatomic,strong) NSString *newsDate;
+@property (nonatomic,strong) NSString *newsSection;
+@property (nonatomic,strong) NSString *newsLocation;
+@property (nonatomic,strong) NSString *newsAbstraction;
+@property (nonatomic,strong) NSURL *newsURL;
+
 
 
 @end

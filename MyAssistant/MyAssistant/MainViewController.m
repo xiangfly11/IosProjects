@@ -8,8 +8,11 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "NewsConnection.h"
 
 @interface MainViewController ()
+
+@property (nonatomic,strong) NSMutableArray *myNewsEntries;
 
 @end
 
@@ -29,6 +32,18 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+    
+    
+    self.newsManage = [[NewsManage alloc]init];
+    
+    self.newsManage.newsConnection = [[NewsConnection alloc] init];
+    
+    self.newsManage.delegate = self;
+
+    self.newsManage.newsConnection.delegate = self.newsManage;
+    
+    
+    [self.newsManage connectEntries];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,5 +60,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - NewsManageDelegate
+
+-(void) connectionFailedWithError:(NSError *)error {
+    
+    NSLog(@"The error is %@ %@",error,[error localizedDescription]);
+}
+
+
+-(void) didReceiveNewsEntries:(NSArray *)newsEntries {
+    
+    self.myNewsEntries = [[NSMutableArray alloc] initWithArray:newsEntries];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
+}
+
+
+
 
 @end

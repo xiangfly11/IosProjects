@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewsManageDelegate.h"
+#import "NewsManage.h"
+@interface MainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NewsManageDelegate>
 
-@interface MainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic) NewsManage *newsManage;
 
 @end

@@ -17,4 +17,5 @@
 @property (weak,nonatomic) id<NewsConnectionDelegate> delegate;
 
 
+
 @end

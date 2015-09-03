@@ -10,5 +10,5 @@
 
 @interface NewsEntryBuilder : NSObject
 
-+(NSArray *) entriesFromJson:(NSData *) objectData error:(NSError **) error;
++(NSArray *) newsFromJson:(NSData *) objectData error:(NSError **) error;
 @end

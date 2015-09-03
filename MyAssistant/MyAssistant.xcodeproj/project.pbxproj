@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E2156111B94E6D000012F02 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2156101B94E6D000012F02 /* SlideMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2E2156111B94E6D000012F02 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2156101B94E6D000012F02 /* SlideMenuViewController.m */; };
 		2E2C4ACE1B89A06B0084BDCD /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C4ACD1B89A06B0084BDCD /* SlideMenuTableViewController.m */; };
 		2E428EF91B8F969400048715 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E428EF81B8F969400048715 /* CoreData.framework */; };
 		2E428EFC1B8F97E300048715 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E428EFA1B8F97E300048715 /* CoreData.xcdatamodeld */; };
@@ -23,13 +23,14 @@
 		2EA6C3A71B8AAEF5002B549F /* ForcastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6C3A61B8AAEF5002B549F /* ForcastViewController.m */; };
 		2EA6C3AA1B8AAF36002B549F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6C3A91B8AAF36002B549F /* MapViewController.m */; };
 		2EA6C3AD1B8AAF48002B549F /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6C3AC1B8AAF48002B549F /* NotesViewController.m */; };
-		2EBF11891B964B15000EB632 /* NewsConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF11881B964B15000EB632 /* NewsConnection.m */; settings = {ASSET_TAGS = (); }; };
-		2EBF118C1B964B2C000EB632 /* NewsManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF118B1B964B2C000EB632 /* NewsManage.m */; settings = {ASSET_TAGS = (); }; };
+		2EBF11891B964B15000EB632 /* NewsConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF11881B964B15000EB632 /* NewsConnection.m */; };
+		2EBF118C1B964B2C000EB632 /* NewsManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF118B1B964B2C000EB632 /* NewsManage.m */; };
 		2EF21A721B901897008FD30A /* NewsEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A711B901897008FD30A /* NewsEntry.m */; };
 		2EF21A751B901A48008FD30A /* NewsEntryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A741B901A48008FD30A /* NewsEntryBuilder.m */; };
 		2EF21A7B1B90C9BC008FD30A /* NotesEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A7A1B90C9BC008FD30A /* NotesEntry.m */; };
 		2EF21A7E1B90D41E008FD30A /* NotesCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */; };
 		2EF21A841B90F67F008FD30A /* SlideMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A831B90F67F008FD30A /* SlideMenuCell.m */; };
+		70B19DB51B978965009B9692 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B19DB41B978965009B9692 /* MainViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesCoreDataStack.m; sourceTree = "<group>"; };
 		2EF21A821B90F67F008FD30A /* SlideMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuCell.h; sourceTree = "<group>"; };
 		2EF21A831B90F67F008FD30A /* SlideMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuCell.m; sourceTree = "<group>"; };
+		70B19DB31B978965009B9692 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
+		70B19DB41B978965009B9692 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				2EF21A831B90F67F008FD30A /* SlideMenuCell.m */,
 				2E21560F1B94E6D000012F02 /* SlideMenuViewController.h */,
 				2E2156101B94E6D000012F02 /* SlideMenuViewController.m */,
+				70B19DB31B978965009B9692 /* MainViewCell.h */,
+				70B19DB41B978965009B9692 /* MainViewCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				2EA6C3AA1B8AAF36002B549F /* MapViewController.m in Sources */,
 				2EA6C3A71B8AAEF5002B549F /* ForcastViewController.m in Sources */,
 				2EBF118C1B964B2C000EB632 /* NewsManage.m in Sources */,
+				70B19DB51B978965009B9692 /* MainViewCell.m in Sources */,
 				2E2156111B94E6D000012F02 /* SlideMenuViewController.m in Sources */,
 				2EF21A7B1B90C9BC008FD30A /* NotesEntry.m in Sources */,
 				2EBF11891B964B15000EB632 /* NewsConnection.m in Sources */,

@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NewsConnectionDelegate.h"
+#import "NewsManageDelegate.h"
+#import "NewsConnection.h"
 
-@interface NewsManage : NSObject
+@interface NewsManage : NSObject <NewsConnectionDelegate>
+
+-(void) connectEntries;
+
+@property (nonatomic,weak) id<NewsManageDelegate> delegate;
+@property (nonatomic,strong) NewsConnection *newsConnection;
+
 
 @end

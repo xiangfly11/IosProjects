@@ -11,40 +11,67 @@
 
 @implementation NewsEntryBuilder
 
-+(NSArray *) entriesFromJson:(NSData *)objectData error:(NSError **)error {
++(NSArray *) newsFromJson:(NSData *)objectData error:(NSError **)error {
+    
+    NSMutableArray *finalNewsArray = [[NSMutableArray alloc] init];
     
     NSError *localError = nil;
     
-    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:&localError];
+    NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:&localError];
     
     if (localError != nil) {
         *error = localError;
-        return  nil;
+        return nil;
     }
     
-    NSMutableArray *finalEntries = [[NSMutableArray alloc] init];
     
-    NSArray *objectArray = [parsedObject objectForKey:@"T1348647853363"];
+    NSArray *results = [newsDictionary objectForKey:@"results"];
     
-    for (NSDictionary *news in objectArray) {
-        NewsEntry *entry = [[NewsEntry alloc] init];
+    for (NSDictionary *dict in results) {
+        NewsEntry *news = [[NewsEntry alloc] init];
         
-        entry.newsTitle = [news objectForKey:@"title"];
+        news.newsSection = [dict objectForKey:@"section"];
         
-        entry.newsDate = [news objectForKey:@"ptime"];
+        news.newsTitle = [dict objectForKey:@"title"];
         
-        NSString *imageString = [news objectForKey:@"imgsrc"];
+        news.newsAbstraction = [dict objectForKey:@"abstract"];
         
-        NSURL *imageUrl = [NSURL URLWithString:imageString];
+        NSString *imageStr = [dict objectForKey:@"thumbnail_standard"];
         
-        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+        NSURL *imageURL = [NSURL URLWithString:imageStr];
         
-        entry.newsSmallImage = [[UIImage alloc] initWithData:imageData];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         
-        [finalEntries addObject:entry];
+        UIImage *imageIcon = [UIImage imageWithData:imageData];
+        
+        news.newsSmallImage = imageIcon;
+        
+        news.newsURL = [dict objectForKey:@"url"];
+        
+        news.newsDate = [dict objectForKey:@"updated_date"];
+        
+        NSArray *mutimedia = [dict objectForKey:@"multimedia"];
+        
+        
+        NSDictionary *tempDict = mutimedia[1];
+        
+        NSString *imageStr2 = [tempDict objectForKey:@"url"];
+        
+        NSURL *urlImage2 = [NSURL URLWithString:imageStr2];
+        
+        NSData *dataImage2 = [NSData dataWithContentsOfURL:urlImage2];
+        
+        UIImage *largeImage = [UIImage imageWithData:dataImage2];
+        
+        news.newsLargeImage = largeImage;
+        
+        
+        [finalNewsArray addObject:news];
+        
     }
     
-    return finalEntries;
+    
+    return finalNewsArray;
     
     
 }
