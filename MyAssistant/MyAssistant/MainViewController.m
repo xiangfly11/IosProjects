@@ -9,6 +9,9 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import "NewsConnection.h"
+#import "NewsEntry.h"
+#import "MainViewCell.h"
+
 
 @interface MainViewController ()
 
@@ -43,6 +46,13 @@
     self.newsManage.newsConnection.delegate = self.newsManage;
     
     
+    self.tableView.estimatedRowHeight = 368;
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+    
+    [self.tableView setDelegate:self];
+    [self.tableView setDataSource:self];
     [self.newsManage connectEntries];
 }
 
@@ -60,6 +70,48 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - TableViewDataSource
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return  [self.myNewsEntries count];
+    
+    
+}
+
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *identifier = @"MainViewCell";
+    
+    
+    MainViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    
+    if (!cell) {
+        cell = (MainViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    NewsEntry *currentEntry = [[NewsEntry alloc] init];
+    
+    currentEntry = self.myNewsEntries[indexPath.row];
+    
+    NSLog(@"title:%@",currentEntry.newsTitle);
+    
+    cell.titleLabel.text = currentEntry.newsTitle;
+    cell.newsImage.image = currentEntry.newsSmallImage;
+    cell.abstractLabel.text = currentEntry.newsAbstraction;
+    
+    
+    return cell;
+}
+
+
 
 #pragma mark - NewsManageDelegate
 

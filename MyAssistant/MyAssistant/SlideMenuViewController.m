@@ -66,7 +66,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *identifier = @"cell";
+    NSString *identifier = @"SlideMenuCell";
     
     NSLog(@"%@",identifier);
     
@@ -87,16 +87,16 @@
     
     switch (index) {
         case 1:
-            [self performSegueWithIdentifier:@"news" sender:self];
+            [self performSegueWithIdentifier:@"goToNews" sender:self];
             break;
         case 2:
-            [self performSegueWithIdentifier:@"forcast" sender:self];
+            [self performSegueWithIdentifier:@"goToForcast" sender:self];
             break;
         case 3:
-            [self performSegueWithIdentifier:@"map" sender:self];
+            [self performSegueWithIdentifier:@"goToMap" sender:self];
             break;
         case 4:
-            [self performSegueWithIdentifier:@"notes" sender:self];
+            [self performSegueWithIdentifier:@"goToNotes" sender:self];
             break;
         default:
             break;

@@ -19,6 +19,8 @@
     
     NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:&localError];
     
+    //NSLog(@"%@",newsDictionary);
+    
     if (localError != nil) {
         *error = localError;
         return nil;
@@ -46,30 +48,31 @@
         
         news.newsSmallImage = imageIcon;
         
-        news.newsURL = [dict objectForKey:@"url"];
-        
-        news.newsDate = [dict objectForKey:@"updated_date"];
-        
-        NSArray *mutimedia = [dict objectForKey:@"multimedia"];
-        
-        
-        NSDictionary *tempDict = mutimedia[1];
-        
-        NSString *imageStr2 = [tempDict objectForKey:@"url"];
-        
-        NSURL *urlImage2 = [NSURL URLWithString:imageStr2];
-        
-        NSData *dataImage2 = [NSData dataWithContentsOfURL:urlImage2];
-        
-        UIImage *largeImage = [UIImage imageWithData:dataImage2];
-        
-        news.newsLargeImage = largeImage;
+//        news.newsURL = [dict objectForKey:@"url"];
+//        
+//        news.newsDate = [dict objectForKey:@"updated_date"];
+//        
+//        NSArray *mutimedia = [dict objectForKey:@"multimedia"];
+//        
+//        
+//        NSDictionary *tempDict = mutimedia[1];
+//        
+//        NSString *imageStr2 = [tempDict objectForKey:@"url"];
+//        
+//        NSURL *urlImage2 = [NSURL URLWithString:imageStr2];
+//        
+//        NSData *dataImage2 = [NSData dataWithContentsOfURL:urlImage2];
+//        
+//        UIImage *largeImage = [UIImage imageWithData:dataImage2];
+//        
+//        news.newsLargeImage = largeImage;
         
         
         [finalNewsArray addObject:news];
-        
+        NSLog(@"fff================:%@",finalNewsArray);
     }
     
+    NSLog(@"finalArray:%@",finalNewsArray);
     
     return finalNewsArray;
     

@@ -27,6 +27,9 @@
     if (error) {
         [self.delegate connectionFailedWithError:error];
     }else{
+        
+        NSLog(@"%@",newsEnties);
+        
         [self.delegate didReceiveNewsEntries:newsEnties];
     }
     

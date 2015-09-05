@@ -16,13 +16,24 @@
     
     NSURL *url = [NSURL URLWithString:urlStr];
     
+    NSLog(@"%@",url);
+    
     [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc]initWithURL:url] queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError) {
+            //NSLog(@"%@",connectionError);
             [self.delegate connectionFailedWithError:connectionError];
         }else{
+            //NSLog(@"%@",data);
             [self.delegate receiveNewsJSON:data];
         }
     }];
+    
+    //    
+//    NSError *error = [[NSError alloc] initWithDomain:NSOSStatusErrorDomain code:1 userInfo:nil];
+//    
+//    if (error) {
+//        [self.delegate connectionFailedWithError:error];
+//    }
 }
 
 

@@ -40,9 +40,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CDB-Ve-EUQ">
                                 <rect key="frame" x="0.0" y="28" width="320" height="540"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.5" green="0.53267261669999999" blue="0.55882826610000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="84" id="iwa-an-evj" customClass="SlideMenuCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlideMenuCell" rowHeight="84" id="iwa-an-evj" customClass="SlideMenuCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iwa-an-evj" id="k57-9c-zyP">
@@ -83,10 +83,10 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="CDB-Ve-EUQ" id="BvV-Bn-27x"/>
-                        <segue destination="glA-o4-OFF" kind="custom" identifier="forcast" customClass="SWRevealViewControllerSeguePushController" id="FNv-Ce-LWq"/>
-                        <segue destination="yVi-2B-8Qm" kind="custom" identifier="news" customClass="SWRevealViewControllerSeguePushController" id="uD2-kT-nWC"/>
-                        <segue destination="ZjJ-mC-gD9" kind="custom" identifier="map" customClass="SWRevealViewControllerSeguePushController" id="lh4-t8-iOe"/>
-                        <segue destination="TZd-XG-iDv" kind="custom" identifier="notes" customClass="SWRevealViewControllerSeguePushController" id="fOX-u2-LOy"/>
+                        <segue destination="yVi-2B-8Qm" kind="custom" identifier="goToNews" customClass="SWRevealViewControllerSeguePushController" id="LlR-BA-Nyf"/>
+                        <segue destination="glA-o4-OFF" kind="custom" identifier="goToForcast" customClass="SWRevealViewControllerSeguePushController" id="pni-h2-uyO"/>
+                        <segue destination="ZjJ-mC-gD9" kind="custom" identifier="goToMap" customClass="SWRevealViewControllerSeguePushController" id="5Fa-ey-uwe"/>
+                        <segue destination="TZd-XG-iDv" kind="custom" identifier="goToNotes" customClass="SWRevealViewControllerSeguePushController" id="4W8-GS-FVL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ute-5O-3KW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,11 +271,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-DR-l7f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-DR-l7f">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="85" id="E6r-jK-ZnO" customClass="MainViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainViewCell" rowHeight="149" id="E6r-jK-ZnO" customClass="MainViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E6r-jK-ZnO" id="xKq-wY-LgB">
@@ -283,39 +283,41 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ypN-q5-cX5">
-                                                    <rect key="frame" x="8" y="8" width="64" height="68"/>
+                                                    <rect key="frame" x="8" y="8" width="74" height="84"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="ZRe-wG-Y7X"/>
-                                                        <constraint firstAttribute="height" constant="68" id="j2m-mi-LKL"/>
+                                                        <constraint firstAttribute="height" constant="84" id="l5j-5X-Jhv"/>
+                                                        <constraint firstAttribute="width" constant="74" id="qC4-NA-q5a"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEI-y9-fbe">
-                                                    <rect key="frame" x="80" y="8" width="232" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEI-y9-fbe">
+                                                    <rect key="frame" x="101" y="8" width="211" height="46"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="232" id="2w8-fm-oY8"/>
+                                                        <constraint firstAttribute="width" constant="211" id="BM2-m2-9FP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.5" green="0.53267261669999999" blue="0.55882826610000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abstractLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-qP-P2i">
-                                                    <rect key="frame" x="80" y="37" width="232" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="abstractLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-qP-P2i">
+                                                    <rect key="frame" x="101" y="72" width="211" height="68"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="232" id="etc-6v-rPW"/>
+                                                        <constraint firstAttribute="width" constant="211" id="Hbc-OO-goc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.5" green="0.53267261669999999" blue="0.55882826610000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ypN-q5-cX5" firstAttribute="leading" secondItem="xKq-wY-LgB" secondAttribute="leading" constant="8" id="IJz-60-5jP"/>
-                                                <constraint firstItem="gAS-qP-P2i" firstAttribute="top" secondItem="sEI-y9-fbe" secondAttribute="bottom" constant="8" id="SPe-yr-whz"/>
-                                                <constraint firstItem="sEI-y9-fbe" firstAttribute="top" secondItem="xKq-wY-LgB" secondAttribute="top" constant="8" id="eXw-dU-NfU"/>
-                                                <constraint firstItem="sEI-y9-fbe" firstAttribute="leading" secondItem="ypN-q5-cX5" secondAttribute="trailing" constant="8" id="qVc-9k-GJ4"/>
-                                                <constraint firstAttribute="bottom" secondItem="gAS-qP-P2i" secondAttribute="bottom" constant="26" id="qtx-T3-SAx"/>
-                                                <constraint firstItem="gAS-qP-P2i" firstAttribute="leading" secondItem="ypN-q5-cX5" secondAttribute="trailing" constant="8" id="s0m-dG-G0H"/>
-                                                <constraint firstItem="ypN-q5-cX5" firstAttribute="top" secondItem="xKq-wY-LgB" secondAttribute="top" constant="8" id="zC8-BJ-5Go"/>
+                                                <constraint firstItem="ypN-q5-cX5" firstAttribute="leading" secondItem="xKq-wY-LgB" secondAttribute="leading" constant="8" id="FBv-n6-ZO8"/>
+                                                <constraint firstItem="sEI-y9-fbe" firstAttribute="leading" secondItem="ypN-q5-cX5" secondAttribute="trailing" constant="19" id="Q69-YC-DdK"/>
+                                                <constraint firstAttribute="bottom" secondItem="gAS-qP-P2i" secondAttribute="bottom" constant="8" id="TQI-Nx-7zs"/>
+                                                <constraint firstAttribute="trailing" secondItem="sEI-y9-fbe" secondAttribute="trailing" constant="8" id="bL7-gx-ayV"/>
+                                                <constraint firstItem="gAS-qP-P2i" firstAttribute="leading" secondItem="ypN-q5-cX5" secondAttribute="trailing" constant="19" id="e5D-Vp-35p"/>
+                                                <constraint firstAttribute="trailing" secondItem="gAS-qP-P2i" secondAttribute="trailing" constant="8" id="fl3-19-Vkf"/>
+                                                <constraint firstItem="gAS-qP-P2i" firstAttribute="top" secondItem="sEI-y9-fbe" secondAttribute="bottom" constant="18" id="gqe-lC-fUB"/>
+                                                <constraint firstItem="sEI-y9-fbe" firstAttribute="top" secondItem="xKq-wY-LgB" secondAttribute="top" constant="8" id="x6t-Ll-0vX"/>
+                                                <constraint firstItem="ypN-q5-cX5" firstAttribute="top" secondItem="xKq-wY-LgB" secondAttribute="top" constant="8" id="xoE-Hf-64I"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -345,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Muz-2N-n4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2486" y="1011"/>
+            <point key="canvasLocation" x="-2366" y="881"/>
         </scene>
         <!--Notes-->
         <scene sceneID="ADK-d0-IAa">
@@ -445,7 +447,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJL-Ba-gej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2964" y="1011"/>
+            <point key="canvasLocation" x="-2924" y="487"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WXT-8H-XT1">
@@ -529,7 +531,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uD2-kT-nWC"/>
         <segue reference="gJZ-tA-3Ea"/>
+        <segue reference="LlR-BA-Nyf"/>
     </inferredMetricsTieBreakers>
 </document>
