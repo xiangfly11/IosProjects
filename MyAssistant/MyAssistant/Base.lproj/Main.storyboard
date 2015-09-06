@@ -343,11 +343,30 @@
                     <connections>
                         <outlet property="slideMenuButton" destination="qSs-at-0rc" id="bTY-K8-h7E"/>
                         <outlet property="tableView" destination="vwH-DR-l7f" id="Qc9-Ym-S2m"/>
+                        <segue destination="Dbc-Lq-Idy" kind="push" identifier="goToNewsDetail" id="UD8-Uk-Fg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Muz-2N-n4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2366" y="881"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="W4R-PP-Oyr">
+            <objects>
+                <viewController id="Dbc-Lq-Idy" customClass="NewsDetailViewController" sceneMemberID="viewController">
+                    <webView key="view" contentMode="scaleToFill" id="xg2-9h-u9N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </webView>
+                    <navigationItem key="navigationItem" id="lrm-2D-be8"/>
+                    <connections>
+                        <outlet property="webView" destination="xg2-9h-u9N" id="c8P-4w-CPV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9e9-LQ-z6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2811" y="1204"/>
         </scene>
         <!--Notes-->
         <scene sceneID="ADK-d0-IAa">

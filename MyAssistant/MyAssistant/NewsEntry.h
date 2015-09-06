@@ -18,7 +18,7 @@
 @property (nonatomic,strong) NSString *newsSection;
 @property (nonatomic,strong) NSString *newsLocation;
 @property (nonatomic,strong) NSString *newsAbstraction;
-@property (nonatomic,strong) NSURL *newsURL;
+@property (nonatomic,strong) NSString *newsURL;
 
 
 

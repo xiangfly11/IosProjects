@@ -48,7 +48,7 @@
         
         news.newsSmallImage = imageIcon;
         
-//        news.newsURL = [dict objectForKey:@"url"];
+        news.newsURL = [dict objectForKey:@"url"];
 //        
 //        news.newsDate = [dict objectForKey:@"updated_date"];
 //        
@@ -69,10 +69,10 @@
         
         
         [finalNewsArray addObject:news];
-        NSLog(@"fff================:%@",finalNewsArray);
+        //NSLog(@"fff================:%@",finalNewsArray);
     }
     
-    NSLog(@"finalArray:%@",finalNewsArray);
+    //NSLog(@"finalArray:%@",finalNewsArray);
     
     return finalNewsArray;
     

@@ -11,11 +11,13 @@
 #import "NewsConnection.h"
 #import "NewsEntry.h"
 #import "MainViewCell.h"
+#import "NewsDetailViewController.h"
 
 
 @interface MainViewController ()
 
 @property (nonatomic,strong) NSMutableArray *myNewsEntries;
+@property (nonatomic) NSInteger selectedRowIndex;
 
 @end
 
@@ -61,15 +63,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    NewsDetailViewController *newsDetail = [segue destinationViewController];
+    
+    NewsEntry *selectedEntry = self.myNewsEntries[self.selectedRowIndex];
+    
+    newsDetail.urlString = selectedEntry.newsURL;
+    
+    
+    
 }
-*/
 
 #pragma mark - TableViewDataSource
 
@@ -101,7 +111,7 @@
     
     currentEntry = self.myNewsEntries[indexPath.row];
     
-    NSLog(@"title:%@",currentEntry.newsTitle);
+    //NSLog(@"title:%@",currentEntry.newsTitle);
     
     cell.titleLabel.text = currentEntry.newsTitle;
     cell.newsImage.image = currentEntry.newsSmallImage;
@@ -110,6 +120,15 @@
     
     return cell;
 }
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"goToNewsDetail" sender:self];
+    self.selectedRowIndex = indexPath.row;
+    
+}
+
 
 
 
