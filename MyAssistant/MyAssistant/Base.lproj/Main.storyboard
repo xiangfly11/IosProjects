@@ -428,10 +428,10 @@
             </objects>
             <point key="canvasLocation" x="-1459" y="1722"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Notes View Controller-->
         <scene sceneID="4G7-m4-mrP">
             <objects>
-                <viewController id="1qQ-uX-zg8" sceneMemberID="viewController">
+                <viewController id="1qQ-uX-zg8" customClass="EditNotesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m82-Lr-Sb4"/>
                         <viewControllerLayoutGuide type="bottom" id="F7W-zc-dg3"/>
@@ -439,12 +439,36 @@
                     <view key="view" contentMode="scaleToFill" id="z0u-9H-Yvl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-br-RAb">
+                                <rect key="frame" x="16" y="72" width="288" height="90"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.88235294119999996" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zap-br-RAb" secondAttribute="trailing" constant="16" id="gDy-Z8-wky"/>
+                            <constraint firstItem="Zap-br-RAb" firstAttribute="leading" secondItem="z0u-9H-Yvl" secondAttribute="leading" constant="16" id="jaH-Z4-rTj"/>
+                            <constraint firstItem="Zap-br-RAb" firstAttribute="top" secondItem="m82-Lr-Sb4" secondAttribute="bottom" constant="8" id="riI-UN-Xla"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="grt-ur-XuP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DIj-Og-dU4"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="db6-3h-qed"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DIj-Og-dU4">
+                            <connections>
+                                <action selector="cancelWasPressed:" destination="1qQ-uX-zg8" id="9Gm-tm-xhc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="db6-3h-qed">
+                            <connections>
+                                <action selector="saveWasPressed:" destination="1qQ-uX-zg8" id="FaQ-hQ-bPo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="Zap-br-RAb" id="ueP-Hg-m42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X2F-8B-yDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
