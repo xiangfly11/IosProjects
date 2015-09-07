@@ -13,6 +13,7 @@
 #import "MainViewCell.h"
 #import "NewsDetailViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
 
 @interface MainViewController()
 
@@ -53,22 +54,39 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    self.loading = [[MBProgressHUD alloc] init];
+//    self.loading = [[MBProgressHUD alloc] init];
+//    
+//    self.loading.labelText = @"LOADING";
+//    
+//    [self.view addSubview:self.loading];
     
-    self.loading.labelText = @"LOADING";
     
-    [self.view addSubview:self.loading];
+    [self.newsManage connectEntries];
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        //[self.tableView.header beginRefreshing];
+        [self.newsManage connectEntries];
+        if (self.myNewsEntries.count != 0) {
+            [self.tableView.header endRefreshing];
+        }
+        
+    }];
     
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
-    [self.newsManage connectEntries];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 
 #pragma mark - Navigation
@@ -153,15 +171,16 @@
 
 
 -(void) didReceiveNewsEntries:(NSArray *)newsEntries {
-    [self.loading show:YES];
-    //[self.loading hide:YES];
+    //[self.tableView.header endRefreshing];
+    //[self.loading show:YES];
     
     self.myNewsEntries = [[NSMutableArray alloc] initWithArray:newsEntries];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
-        [self.loading hide:YES];
+        //[self.loading hide:YES];
     });
+    
     
 }
 
