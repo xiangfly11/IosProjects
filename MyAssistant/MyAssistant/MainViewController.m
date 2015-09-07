@@ -77,6 +77,10 @@
     
     newsDetail.urlString = selectedEntry.newsURL;
     
+    NSLog(@"title ======%@",selectedEntry.newsTitle);
+    
+    NSLog(@"index =====%ld",self.selectedRowIndex);
+    
     
     
 }
@@ -124,8 +128,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"goToNewsDetail" sender:self];
     self.selectedRowIndex = indexPath.row;
+    [self performSegueWithIdentifier:@"goToNewsDetail" sender:self];
+    
     
 }
 
