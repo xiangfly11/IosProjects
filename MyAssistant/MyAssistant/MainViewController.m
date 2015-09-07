@@ -77,9 +77,9 @@
     
     newsDetail.urlString = selectedEntry.newsURL;
     
-    NSLog(@"title ======%@",selectedEntry.newsTitle);
+    //NSLog(@"title ======%@",selectedEntry.newsTitle);
     
-    NSLog(@"index =====%ld",self.selectedRowIndex);
+    //NSLog(@"index =====%ld",self.selectedRowIndex);
     
     
     
