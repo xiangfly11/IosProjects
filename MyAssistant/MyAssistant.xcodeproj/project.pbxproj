@@ -92,6 +92,7 @@
 		2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesCoreDataStack.m; sourceTree = "<group>"; };
 		2EF21A821B90F67F008FD30A /* SlideMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuCell.h; sourceTree = "<group>"; };
 		2EF21A831B90F67F008FD30A /* SlideMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuCell.m; sourceTree = "<group>"; };
+		7025906C1B9D3BAA00C006FE /* MyAssistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAssistant-Prefix.pch"; sourceTree = "<group>"; };
 		707558F91B9C01FE001C8B0B /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		707558FA1B9C01FE001C8B0B /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		708D61251B989CA000570160 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 			children = (
 				2E4CD4C31B88161A00578925 /* Info.plist */,
 				2E4CD4C41B88161A00578925 /* main.m */,
+				7025906C1B9D3BAA00C006FE /* MyAssistant-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
