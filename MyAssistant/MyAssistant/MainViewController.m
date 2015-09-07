@@ -12,12 +12,13 @@
 #import "NewsEntry.h"
 #import "MainViewCell.h"
 #import "NewsDetailViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
-
-@interface MainViewController ()
+@interface MainViewController()
 
 @property (nonatomic,strong) NSMutableArray *myNewsEntries;
 @property (nonatomic) NSInteger selectedRowIndex;
+@property (nonatomic,strong) MBProgressHUD *loading;
 
 @end
 
@@ -51,7 +52,13 @@
     self.tableView.estimatedRowHeight = 368;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-
+    
+    self.loading = [[MBProgressHUD alloc] init];
+    
+    self.loading.labelText = @"LOADING";
+    
+    [self.view addSubview:self.loading];
+    
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
@@ -146,11 +153,14 @@
 
 
 -(void) didReceiveNewsEntries:(NSArray *)newsEntries {
+    [self.loading show:YES];
+    //[self.loading hide:YES];
     
     self.myNewsEntries = [[NSMutableArray alloc] initWithArray:newsEntries];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
+        [self.loading hide:YES];
     });
     
 }
