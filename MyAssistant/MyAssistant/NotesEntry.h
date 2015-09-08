@@ -21,5 +21,6 @@
 
 @property (nonatomic,readonly) NSString *sectionName;
 
+//@property (nonatomic) NSTimeInterval now;
 
 @end

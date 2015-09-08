@@ -14,6 +14,7 @@
 @dynamic date;
 @dynamic location;
 @dynamic title;
+//@dynamic now;
 
 -(NSString *) sectionName {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.date];

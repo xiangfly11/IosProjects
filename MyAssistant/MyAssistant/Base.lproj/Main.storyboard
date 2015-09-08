@@ -422,6 +422,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="slideMenuButton" destination="wqc-9n-gY7" id="2Hj-iF-ivJ"/>
+                        <outlet property="tableView" destination="EF3-nG-AKH" id="Ms3-FH-dUM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFu-vj-2Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -76,7 +76,7 @@
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     
-    
+    //[self applicationDocumentsDirectory];
     
 }
 
@@ -180,6 +180,18 @@
         [self.tableView reloadData];
         //[self.loading hide:YES];
     });
+    
+    
+}
+
+- (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "MyPractice.CoreData" in the application's documents directory.
+    
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    
+    NSLog(@"%@",url.absoluteString);
+    
+    return url;
     
     
 }

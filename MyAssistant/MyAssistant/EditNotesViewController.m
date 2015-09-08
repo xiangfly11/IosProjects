@@ -7,6 +7,8 @@
 //
 
 #import "EditNotesViewController.h"
+#import "NotesCoreDataStack.h"
+#import "NotesEntry.h"
 
 @interface EditNotesViewController ()
 
@@ -28,7 +30,14 @@
     self.textView.layer.borderWidth = 2;
     
     self.textView.layer.borderColor = [[UIColor colorWithRed:89.0/255.0 green:110.0/255.0 blue:100.0/255.0 alpha:1.0] CGColor];
+    
+    
+    if (self.entry) {
+        self.textView.text = self.entry.body;
+    }
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -64,11 +73,54 @@
 
 
 - (IBAction)saveWasPressed:(id)sender {
+    
+    if (self.entry != nil) {
+        [self updateInputEntry];
+    }else{
+        [self insertInputEntry];
+    }
+    
+    
+    
     [self dismissPresentingView];
+    
     
 }
 
 
+
+#pragma mark - Manage Input Data
+
+-(void) insertInputEntry {
+    
+    NotesCoreDataStack *coreDataStack = [NotesCoreDataStack defaultStack];
+    
+    NotesEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"NotesEntry" inManagedObjectContext:coreDataStack.managedObjectContext];
+    
+    
+    entry.body = self.textView.text;
+    
+    NSLog(@"%@",entry.body);
+    
+    
+    //entry.date = [[NSDate date] timeIntervalSince1970];
+    //entry.date = [[NSDate date] timeIntervalSince1970];
+    
+    //entry.now = [[NSDate date] timeIntervalSince1970];
+    NSLog(@"========%f",[[NSDate date] timeIntervalSince1970]);
+    
+    [coreDataStack saveContext];
+}
+
+
+
+-(void) updateInputEntry {
+    self.entry.body = self.textView.text;
+    NotesCoreDataStack *coreDataStack = [NotesCoreDataStack defaultStack];
+    
+    [coreDataStack saveContext];
+    
+}
 
 
 @end

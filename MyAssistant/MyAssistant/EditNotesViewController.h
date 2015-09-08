@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NotesEntry.h"
 
 @interface EditNotesViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (strong,nonatomic) NotesEntry *entry;
+
 
 @end

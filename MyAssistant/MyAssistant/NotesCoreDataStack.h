@@ -21,6 +21,6 @@
 +(instancetype) defaultStack;
 
 -(void) saveContext;
--(NSURL *) dataDocumentDirectory;
+-(NSURL *) applicationDocumentsDirectory ;
 
 @end

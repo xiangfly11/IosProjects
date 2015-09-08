@@ -31,10 +31,11 @@
 }
 
 
--(NSURL *) dataDocumentDirectory {
+
+- (NSURL *)applicationDocumentsDirectory  {
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
-    NSLog(@"%@",url);
+    //NSLog(@"%@",url);
     
     return url;
 }
@@ -64,9 +65,9 @@
     }
     
     
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    NSURL *storeUrl = [[self dataDocumentDirectory] URLByAppendingPathComponent:@"CoreData.sqlite"];
+    NSURL *storeUrl = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"MyAssistant.sqlite"];
     
     NSError *error = nil;
     
