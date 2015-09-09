@@ -326,6 +326,40 @@
                                             <outlet property="titleLabel" destination="sEI-y9-fbe" id="j6n-MM-rYi"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellNoImage" rowHeight="104" id="24f-Yy-CpE" customClass="MainViewCellWithoutImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="24f-Yy-CpE" id="Hb0-r7-Icm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="titleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUn-k1-nZ8">
+                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.5" green="0.53267261669999999" blue="0.55882826610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="abstractLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHQ-He-ewh">
+                                                    <rect key="frame" x="13" y="37" width="299" height="58"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.5" green="0.53267261669999999" blue="0.55882826610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="DHQ-He-ewh" secondAttribute="bottom" constant="8" id="Rb3-2B-Wal"/>
+                                                <constraint firstAttribute="trailing" secondItem="yUn-k1-nZ8" secondAttribute="trailing" constant="8" id="ZdT-za-G0l"/>
+                                                <constraint firstItem="DHQ-He-ewh" firstAttribute="top" secondItem="yUn-k1-nZ8" secondAttribute="bottom" constant="8" id="azg-Hl-qMD"/>
+                                                <constraint firstAttribute="trailing" secondItem="DHQ-He-ewh" secondAttribute="trailing" constant="8" id="hBw-6m-hjf"/>
+                                                <constraint firstItem="yUn-k1-nZ8" firstAttribute="top" secondItem="Hb0-r7-Icm" secondAttribute="top" constant="8" id="jjH-yK-qTA"/>
+                                                <constraint firstItem="DHQ-He-ewh" firstAttribute="leading" secondItem="Hb0-r7-Icm" secondAttribute="leading" constant="13" id="jyO-gk-SlY"/>
+                                                <constraint firstItem="yUn-k1-nZ8" firstAttribute="leading" secondItem="Hb0-r7-Icm" secondAttribute="leading" constant="8" id="yMu-Lw-UoR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="abstractLabel" destination="DHQ-He-ewh" id="is6-It-kMJ"/>
+                                            <outlet property="titleLabel" destination="yUn-k1-nZ8" id="bwu-zs-Tgy"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

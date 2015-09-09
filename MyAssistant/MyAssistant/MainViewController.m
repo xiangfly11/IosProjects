@@ -14,6 +14,7 @@
 #import "NewsDetailViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <MJRefresh/MJRefresh.h>
+#import "MainViewCellWithoutImage.h"
 
 @interface MainViewController()
 
@@ -127,27 +128,37 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *identifier = @"MainViewCell";
-    
-    
-    MainViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    
-    if (!cell) {
-        cell = (MainViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
+    static NSString *identifier1 = @"MainViewCell";
+    static NSString *identifier2 = @"CellNoImage";
     
     NewsEntry *currentEntry = [[NewsEntry alloc] init];
     
     currentEntry = self.myNewsEntries[indexPath.row];
     
-    //NSLog(@"title:%@",currentEntry.newsTitle);
+    if (currentEntry.newsSmallImage) {
+        MainViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier1 forIndexPath:indexPath];
+        
+        if (!cell) {
+            cell = (MainViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier1];
+        }
+        cell.titleLabel.text = currentEntry.newsTitle;
+        cell.newsImage.image = currentEntry.newsSmallImage;
+        cell.abstractLabel.text = currentEntry.newsAbstraction;
+        
+        return cell;
+    }else {
+        MainViewCellWithoutImage *cell = [tableView dequeueReusableCellWithIdentifier:identifier2 forIndexPath:indexPath];
+        
+        if (!cell) {
+            cell = (MainViewCellWithoutImage *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier2];
+        }
+        cell.titleLabel.text = currentEntry.newsTitle;
+        cell.abstractLabel.text = currentEntry.newsAbstraction;
+        
+        return cell;
+        
+    }
     
-    cell.titleLabel.text = currentEntry.newsTitle;
-    cell.newsImage.image = currentEntry.newsSmallImage;
-    cell.abstractLabel.text = currentEntry.newsAbstraction;
-    
-    
-    return cell;
 }
 
 
