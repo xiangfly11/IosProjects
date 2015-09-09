@@ -9,8 +9,9 @@
 #import "NotesViewController.h"
 #import "SWRevealViewController.h"
 #import <CoreData/CoreData.h>
-#import "NotesEntry.h"
+//#import "NotesEntry.h"
 #import "NotesCoreDataStack.h"
+#import "NewNotesEntity.h"
 
 @interface NotesViewController () <UITableViewDataSource,UITableViewDelegate,NSFetchedResultsControllerDelegate>
 
@@ -63,10 +64,10 @@
     
     NSLog(@"entryListFetchRequest");
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"NotesEntry"];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"NewNotesEntity"];
     
     
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"body" ascending:NO]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
     
     
     
@@ -93,7 +94,7 @@
     
     //Passing the sectionName property of diaryEntrty in the sectionNameKeyPath argument
     
-    _fetchedRequestController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:@"body" cacheName:nil];
+    _fetchedRequestController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:@"sectionName" cacheName:nil];
     
     _fetchedRequestController.delegate = self;
     
@@ -102,12 +103,12 @@
 
 
 
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    
-//    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedRequestController sections] [section];
-//    
-//    return [sectionInfo name];
-//}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedRequestController sections] [section];
+    
+    return [sectionInfo name];
+}
 
 -(UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -116,7 +117,7 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NotesEntry *entry = [self.fetchedRequestController objectAtIndexPath:indexPath];
+    NewNotesEntity *entry = [self.fetchedRequestController objectAtIndexPath:indexPath];
     
     NotesCoreDataStack *coreDataStack = [NotesCoreDataStack defaultStack];
     
@@ -219,7 +220,7 @@
     
     // Configure the cell...
     
-    NotesEntry *entry = [self.fetchedRequestController objectAtIndexPath:indexPath];
+    NewNotesEntity *entry = [self.fetchedRequestController objectAtIndexPath:indexPath];
     
     
     

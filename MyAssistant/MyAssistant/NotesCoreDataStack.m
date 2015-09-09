@@ -67,7 +67,7 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    NSURL *storeUrl = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"MyAssistant.sqlite"];
+    NSURL *storeUrl = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CurrentMyAssistant.sqlite"];
     
     NSError *error = nil;
     

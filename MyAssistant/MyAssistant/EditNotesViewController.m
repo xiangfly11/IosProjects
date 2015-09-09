@@ -8,7 +8,7 @@
 
 #import "EditNotesViewController.h"
 #import "NotesCoreDataStack.h"
-#import "NotesEntry.h"
+//#import "NotesEntry.h"
 
 @interface EditNotesViewController ()
 
@@ -95,7 +95,7 @@
     
     NotesCoreDataStack *coreDataStack = [NotesCoreDataStack defaultStack];
     
-    NotesEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"NotesEntry" inManagedObjectContext:coreDataStack.managedObjectContext];
+    NewNotesEntity *entry = [NSEntityDescription insertNewObjectForEntityForName:@"NewNotesEntity" inManagedObjectContext:coreDataStack.managedObjectContext];
     
     
     entry.body = self.textView.text;
@@ -104,7 +104,7 @@
     
     
     //entry.date = [[NSDate date] timeIntervalSince1970];
-    //entry.date = [[NSDate date] timeIntervalSince1970];
+    entry.date = [[NSDate date] timeIntervalSince1970];
     
     //entry.now = [[NSDate date] timeIntervalSince1970];
     NSLog(@"========%f",[[NSDate date] timeIntervalSince1970]);

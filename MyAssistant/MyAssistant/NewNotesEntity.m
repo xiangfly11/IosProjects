@@ -1,20 +1,21 @@
 //
-//  NotesEntry.m
+//  NewNotesEntity.m
 //  MyAssistant
 //
-//  Created by Jiaxiang Li on 15/8/28.
-//  Copyright (c) 2015年 Jiaxiang Li. All rights reserved.
+//  Created by Jiaxiang Li on 9/9/15.
+//  Copyright (c) 2015 Jiaxiang Li. All rights reserved.
 //
 
-#import "NotesEntry.h"
+#import "NewNotesEntity.h"
 
-@implementation NotesEntry
+
+@implementation NewNotesEntity
 
 @dynamic body;
-@dynamic date;
-@dynamic location;
 @dynamic title;
-//@dynamic now;
+@dynamic location;
+@dynamic date;
+
 
 -(NSString *) sectionName {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.date];
@@ -29,9 +30,6 @@
     return [dateFormatter stringFromDate:date];
     
 }
-
-
-
 
 
 @end
