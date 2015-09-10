@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		21345DD6E9EBFC00837E9167 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF94070217D615C18D32B23 /* libPods.a */; };
 		2E2156111B94E6D000012F02 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2156101B94E6D000012F02 /* SlideMenuViewController.m */; };
-		2E2C4ACE1B89A06B0084BDCD /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C4ACD1B89A06B0084BDCD /* SlideMenuTableViewController.m */; };
 		2E428EF91B8F969400048715 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E428EF81B8F969400048715 /* CoreData.framework */; };
 		2E428EFC1B8F97E300048715 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E428EFA1B8F97E300048715 /* CoreData.xcdatamodeld */; };
 		2E4CD4C51B88161A00578925 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4CD4C41B88161A00578925 /* main.m */; };
@@ -31,6 +30,8 @@
 		2EF21A7E1B90D41E008FD30A /* NotesCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */; };
 		2EF21A841B90F67F008FD30A /* SlideMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A831B90F67F008FD30A /* SlideMenuCell.m */; };
 		700BB3A61B9FD8E600C95757 /* MainViewCellWithoutImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 700BB3A51B9FD8E600C95757 /* MainViewCellWithoutImage.m */; };
+		70267F8A1BA138EF00CE5655 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70267F891BA138EF00CE5655 /* CoreLocation.framework */; };
+		70267F8C1BA1390500CE5655 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70267F8B1BA1390500CE5655 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		705074621B9DDE5700F07C9C /* EditNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705074611B9DDE5700F07C9C /* EditNotesViewController.m */; };
 		705204C21B9FF32400972E62 /* NewNotesEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 705204C11B9FF32400972E62 /* NewNotesEntity.m */; };
 		707558FB1B9C01FE001C8B0B /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707558FA1B9C01FE001C8B0B /* NewsDetailViewController.m */; };
@@ -51,8 +52,6 @@
 /* Begin PBXFileReference section */
 		2E21560F1B94E6D000012F02 /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
 		2E2156101B94E6D000012F02 /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
-		2E2C4ACC1B89A06B0084BDCD /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuTableViewController.h; sourceTree = "<group>"; };
-		2E2C4ACD1B89A06B0084BDCD /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuTableViewController.m; sourceTree = "<group>"; };
 		2E428EF81B8F969400048715 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2E428EFB1B8F97E300048715 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		2E4CD4BF1B88161A00578925 /* MyAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +94,8 @@
 		700BB3A41B9FD8E600C95757 /* MainViewCellWithoutImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCellWithoutImage.h; sourceTree = "<group>"; };
 		700BB3A51B9FD8E600C95757 /* MainViewCellWithoutImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCellWithoutImage.m; sourceTree = "<group>"; };
 		7025906C1B9D3BAA00C006FE /* MyAssistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAssistant-Prefix.pch"; sourceTree = "<group>"; };
+		70267F891BA138EF00CE5655 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		70267F8B1BA1390500CE5655 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		705074601B9DDE5700F07C9C /* EditNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNotesViewController.h; sourceTree = "<group>"; };
 		705074611B9DDE5700F07C9C /* EditNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNotesViewController.m; sourceTree = "<group>"; };
 		705204C01B9FF32400972E62 /* NewNotesEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNotesEntity.h; sourceTree = "<group>"; };
@@ -114,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70267F8C1BA1390500CE5655 /* MapKit.framework in Frameworks */,
+				70267F8A1BA138EF00CE5655 /* CoreLocation.framework in Frameworks */,
 				2E428EF91B8F969400048715 /* CoreData.framework in Frameworks */,
 				21345DD6E9EBFC00837E9167 /* libPods.a in Frameworks */,
 			);
@@ -209,8 +212,6 @@
 			children = (
 				2E4CD4EF1B88186200578925 /* MainViewController.h */,
 				2E4CD4F01B88186200578925 /* MainViewController.m */,
-				2E2C4ACC1B89A06B0084BDCD /* SlideMenuTableViewController.h */,
-				2E2C4ACD1B89A06B0084BDCD /* SlideMenuTableViewController.m */,
 				2EA6C3A51B8AAEF5002B549F /* ForcastViewController.h */,
 				2EA6C3A61B8AAEF5002B549F /* ForcastViewController.m */,
 				2EA6C3A81B8AAF36002B549F /* MapViewController.h */,
@@ -259,6 +260,8 @@
 		4D87901E7A02EFB10AE21C75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70267F8B1BA1390500CE5655 /* MapKit.framework */,
+				70267F891BA138EF00CE5655 /* CoreLocation.framework */,
 				CFF94070217D615C18D32B23 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -410,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				705204C21B9FF32400972E62 /* NewNotesEntity.m in Sources */,
-				2E2C4ACE1B89A06B0084BDCD /* SlideMenuTableViewController.m in Sources */,
 				2E4CD4C81B88161A00578925 /* AppDelegate.m in Sources */,
 				2EF21A751B901A48008FD30A /* NewsEntryBuilder.m in Sources */,
 				2E428EFC1B8F97E300048715 /* CoreData.xcdatamodeld in Sources */,

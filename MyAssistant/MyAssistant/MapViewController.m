@@ -8,7 +8,9 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
-@interface MapViewController ()
+@interface MapViewController ()<CLLocationManagerDelegate,MKMapViewDelegate>
+
+@property (nonatomic,strong) CLLocationManager *locationManager;
 
 @end
 
@@ -29,6 +31,22 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
+    
+    [self.locationManager requestAlwaysAuthorization];
+    
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.mapView setDelegate:self];
+    
+    self.mapView.mapType = MKMapTypeHybrid;
+    
+    self.mapView.showsUserLocation = YES;
+     
+     [self.locationManager startUpdatingLocation];
 
 }
 
@@ -46,5 +64,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    CLLocation *location = [locations firstObject];
+    
+    CLGeocoder *myCoder = [[CLGeocoder alloc] init];
+    
+    [myCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        //CLPlacemark *myPlaceMark = [placemarks firstObject];
+        
+        
+    }];
+    
+}
+
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    
+    MKCoordinateRegion mapRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    
+    
+    [self.mapView setRegion:[self.mapView regionThatFits:mapRegion] animated:YES];
+}
 
 @end
