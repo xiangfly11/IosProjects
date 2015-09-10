@@ -28,7 +28,6 @@
 		2EBF118C1B964B2C000EB632 /* NewsManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF118B1B964B2C000EB632 /* NewsManage.m */; };
 		2EF21A721B901897008FD30A /* NewsEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A711B901897008FD30A /* NewsEntry.m */; };
 		2EF21A751B901A48008FD30A /* NewsEntryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A741B901A48008FD30A /* NewsEntryBuilder.m */; };
-		2EF21A7B1B90C9BC008FD30A /* NotesEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A7A1B90C9BC008FD30A /* NotesEntry.m */; };
 		2EF21A7E1B90D41E008FD30A /* NotesCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */; };
 		2EF21A841B90F67F008FD30A /* SlideMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF21A831B90F67F008FD30A /* SlideMenuCell.m */; };
 		700BB3A61B9FD8E600C95757 /* MainViewCellWithoutImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 700BB3A51B9FD8E600C95757 /* MainViewCellWithoutImage.m */; };
@@ -89,8 +88,6 @@
 		2EF21A711B901897008FD30A /* NewsEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntry.m; sourceTree = "<group>"; };
 		2EF21A731B901A48008FD30A /* NewsEntryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntryBuilder.h; sourceTree = "<group>"; };
 		2EF21A741B901A48008FD30A /* NewsEntryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntryBuilder.m; sourceTree = "<group>"; };
-		2EF21A791B90C9BC008FD30A /* NotesEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesEntry.h; sourceTree = "<group>"; };
-		2EF21A7A1B90C9BC008FD30A /* NotesEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesEntry.m; sourceTree = "<group>"; };
 		2EF21A7C1B90D41E008FD30A /* NotesCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesCoreDataStack.h; sourceTree = "<group>"; };
 		2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesCoreDataStack.m; sourceTree = "<group>"; };
 		2EF21A821B90F67F008FD30A /* SlideMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuCell.h; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 				2EF21A711B901897008FD30A /* NewsEntry.m */,
 				2EF21A731B901A48008FD30A /* NewsEntryBuilder.h */,
 				2EF21A741B901A48008FD30A /* NewsEntryBuilder.m */,
-				2EF21A791B90C9BC008FD30A /* NotesEntry.h */,
-				2EF21A7A1B90C9BC008FD30A /* NotesEntry.m */,
 				2EF21A7C1B90D41E008FD30A /* NotesCoreDataStack.h */,
 				2EF21A7D1B90D41E008FD30A /* NotesCoreDataStack.m */,
 				2E98EFC21B898A8E00F7E923 /* SlideMenuItems.h */,
@@ -429,7 +424,6 @@
 				705074621B9DDE5700F07C9C /* EditNotesViewController.m in Sources */,
 				70B19DB51B978965009B9692 /* MainViewCell.m in Sources */,
 				2E2156111B94E6D000012F02 /* SlideMenuViewController.m in Sources */,
-				2EF21A7B1B90C9BC008FD30A /* NotesEntry.m in Sources */,
 				2EBF11891B964B15000EB632 /* NewsConnection.m in Sources */,
 				2E4CD4EA1B8816D400578925 /* SWRevealViewController.m in Sources */,
 				2EF21A841B90F67F008FD30A /* SlideMenuCell.m in Sources */,
