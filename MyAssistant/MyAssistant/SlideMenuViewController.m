@@ -22,7 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"aaaaa");
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+   
     
     [self.tableView setDataSource:self];
     

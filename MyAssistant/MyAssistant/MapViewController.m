@@ -8,9 +8,8 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
-@interface MapViewController ()<CLLocationManagerDelegate,MKMapViewDelegate>
+@interface MapViewController ()
 
-@property (nonatomic,strong) CLLocationManager *locationManager;
 
 @end
 
@@ -24,29 +23,14 @@
     SWRevealViewController *revealViewController = self.revealViewController;
     
     if (revealViewController) {
-        [self.slideMenuButton setTarget:self.revealViewController];
+        [self.slideMenuBar setTarget:self.revealViewController];
         
-        [self.slideMenuButton setAction:@selector(revealToggle:)];
+        [self.slideMenuBar setAction:@selector(revealToggle:)];
         
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    self.locationManager.delegate = self;
-    
-    [self.locationManager requestAlwaysAuthorization];
-    
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    [self.mapView setDelegate:self];
-    
-    self.mapView.mapType = MKMapTypeHybrid;
-    
-    self.mapView.showsUserLocation = YES;
-     
-     [self.locationManager startUpdatingLocation];
+
 
 }
 
@@ -65,30 +49,21 @@
 }
 */
 
+#pragma mark - Action
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+- (IBAction)getCurrentLocationAction:(id)sender {
     
-    CLLocation *location = [locations firstObject];
     
-    CLGeocoder *myCoder = [[CLGeocoder alloc] init];
-    
-    [myCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        
-        //CLPlacemark *myPlaceMark = [placemarks firstObject];
-        
-        
-    }];
     
 }
 
-
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+- (IBAction)getDirectionAction:(id)sender {
     
-    MKCoordinateRegion mapRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self performSegueWithIdentifier:@"goToDirection" sender:self];
     
     
-    [self.mapView setRegion:[self.mapView regionThatFits:mapRegion] animated:YES];
 }
+
 
 @end

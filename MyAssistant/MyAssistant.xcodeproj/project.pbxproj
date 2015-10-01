@@ -37,6 +37,8 @@
 		707558FB1B9C01FE001C8B0B /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707558FA1B9C01FE001C8B0B /* NewsDetailViewController.m */; };
 		708D61261B989CA000570160 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 708D61251B989CA000570160 /* Podfile */; };
 		70B19DB51B978965009B9692 /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B19DB41B978965009B9692 /* MainViewCell.m */; };
+		7A12C15A1BBC452A0017C758 /* city_list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7A12C1591BBC452A0017C758 /* city_list.txt */; settings = {ASSET_TAGS = (); }; };
+		7A12C15D1BBCDA320017C758 /* DirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A12C15C1BBCDA320017C758 /* DirectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,9 @@
 		70B19DB31B978965009B9692 /* MainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCell.h; sourceTree = "<group>"; };
 		70B19DB41B978965009B9692 /* MainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCell.m; sourceTree = "<group>"; };
 		70CD6A431AF79857F5550714 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A12C1591BBC452A0017C758 /* city_list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city_list.txt; sourceTree = "<group>"; };
+		7A12C15B1BBCDA320017C758 /* DirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionViewController.h; sourceTree = "<group>"; };
+		7A12C15C1BBCDA320017C758 /* DirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionViewController.m; sourceTree = "<group>"; };
 		CFF94070217D615C18D32B23 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3972D27580B05C52AAED3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +179,7 @@
 		2E4CD4C21B88161A00578925 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7A12C1591BBC452A0017C758 /* city_list.txt */,
 				2E4CD4C31B88161A00578925 /* Info.plist */,
 				2E4CD4C41B88161A00578925 /* main.m */,
 				7025906C1B9D3BAA00C006FE /* MyAssistant-Prefix.pch */,
@@ -230,6 +236,8 @@
 				705074611B9DDE5700F07C9C /* EditNotesViewController.m */,
 				700BB3A41B9FD8E600C95757 /* MainViewCellWithoutImage.h */,
 				700BB3A51B9FD8E600C95757 /* MainViewCellWithoutImage.m */,
+				7A12C15B1BBCDA320017C758 /* DirectionViewController.h */,
+				7A12C15C1BBCDA320017C758 /* DirectionViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -322,11 +330,12 @@
 		2E4CD4B71B88161A00578925 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jiaxiang Li";
 				TargetAttributes = {
 					2E4CD4BE1B88161A00578925 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 5V9N6LR458;
 					};
 					2E4CD4D71B88161A00578925 = {
 						CreatedOnToolsVersion = 6.4;
@@ -361,6 +370,7 @@
 				2E4CD4CE1B88161A00578925 /* Main.storyboard in Resources */,
 				2E4CD4D31B88161A00578925 /* LaunchScreen.xib in Resources */,
 				708D61261B989CA000570160 /* Podfile in Resources */,
+				7A12C15A1BBC452A0017C758 /* city_list.txt in Resources */,
 				2E4CD4D01B88161A00578925 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +436,7 @@
 				705074621B9DDE5700F07C9C /* EditNotesViewController.m in Sources */,
 				70B19DB51B978965009B9692 /* MainViewCell.m in Sources */,
 				2E2156111B94E6D000012F02 /* SlideMenuViewController.m in Sources */,
+				7A12C15D1BBCDA320017C758 /* DirectionViewController.m in Sources */,
 				2EBF11891B964B15000EB632 /* NewsConnection.m in Sources */,
 				2E4CD4EA1B8816D400578925 /* SWRevealViewController.m in Sources */,
 				2EF21A841B90F67F008FD30A /* SlideMenuCell.m in Sources */,
@@ -495,6 +506,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -559,9 +571,13 @@
 			baseConfigurationReference = 70CD6A431AF79857F5550714 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyPractice.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -570,9 +586,13 @@
 			baseConfigurationReference = ECF3972D27580B05C52AAED3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyPractice.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -590,6 +610,7 @@
 				);
 				INFOPLIST_FILE = MyAssistantTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyPractice.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAssistant.app/MyAssistant";
 			};
@@ -605,6 +626,7 @@
 				);
 				INFOPLIST_FILE = MyAssistantTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MyPractice.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAssistant.app/MyAssistant";
 			};

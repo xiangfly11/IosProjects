@@ -11,7 +11,24 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface MapViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuButton;
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuBar;
+
+@property (weak, nonatomic) IBOutlet UITextField *startStreet;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *startCity;
+
+@property (weak, nonatomic) IBOutlet UITextField *startState;
+@property (weak, nonatomic) IBOutlet UITextField *startZip;
+
+@property (weak, nonatomic) IBOutlet UITextField *endStreet;
+
+@property (weak, nonatomic) IBOutlet UITextField *endCity;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *endState;
+
+@property (weak, nonatomic) IBOutlet UITextField *endZip;
 
 @end

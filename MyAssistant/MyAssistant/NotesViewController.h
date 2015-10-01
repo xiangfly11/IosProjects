@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NotesViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuButton;
 @end
